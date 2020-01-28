@@ -5,11 +5,11 @@ from .models import Product
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
         '__str__',
-        'importad',
+        'importado',
         'ncm',
-        'price',
-        'stock',
-        'minimum_stock',
+        'preco',
+        'estoque',
+        'estoque_minimo',
     )
-    search_fields=('product',)
-    list_filter=('importad',)
+    search_fields=('produto',)
+    list_filter=('importado',)
