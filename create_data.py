@@ -25,11 +25,11 @@ class ProductClass:
         aux = []
         for product in products:
             data = dict(
-                product=product,
-                importad=choice((True, False)),
+                produto=produto,
+                importado=choice((True, False)),
                 ncm=Utils.gen_digits(8),
-                price=random() * randint(10, 50),
-                stock=randint(10, 200),
+                preco=random() * randint(10, 50),
+                estoque=randint(10, 200),
             )
             obj = Product(**data)
             aux.append(obj)
