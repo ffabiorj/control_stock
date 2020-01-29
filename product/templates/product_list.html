@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="page-header">
+    <h2><span class="oi oi-list"></span>Lista de Produtos</h2>
+    {% if products %}
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+            <th>Importado</th>
+            <th>NCM</th>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th class="text-center">Estoque</th>
+            <th class="text-center">Estoque mínimo</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td>
+                    {% if product.importado %}
+                    <i class="fa fa-check-circle ok"></i>
+                    {% else %}
+                    <i class="fa fa-minus-circle no"></i>
+                    {% endif %}
+                </td>
+                <td>{{ product.ncm }}</td>
+                <td>{{ product.produto }}</td>
+                <td>R$ <span class="">{{ product.preco }}</span></td>
+                <td class="text-center">{{ product.estoque}}</td>
+                <td class="text-center">{{ product.estoque_minimo }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <div class="alert alert-warning text-center">
+        Nenhum produto cadastrado!
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
