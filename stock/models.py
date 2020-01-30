@@ -17,7 +17,10 @@ class Stock(TimeStampedModel):
         ordering = ('-created',)
 
     def __str__(self):
-        return str(self.pk)
+        return f'{self.pk} - {self.nf} - {self.created.strftime("%d/%m/%Y")}'
+
+    def nf_format(self):
+        return str(self.nf).zfill(3)
 
 
 class StockItems(models.Model):

@@ -20,5 +20,6 @@ from core.views import home
 urlpatterns = [
     path('', home, name='home'),
     path('produtos/', include('product.urls')),
+    path('estoque/', include('stock.urls')),
     path('admin/', admin.site.urls),
 ]

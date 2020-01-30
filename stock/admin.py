@@ -9,7 +9,7 @@ class StockItemsInLine(admin.TabularInline):
 @admin.register(Stock)
 class StockAdmin(admin.ModelAdmin):
     inlines = (StockItemsInLine,)
-    list_display = ('__str__', 'nf')
+    list_display = ('__str__', 'nf', 'funcionario',)
     search_fields = ('nf',)
     list_filter = ('funcionario',)
     date_hierarchy = 'created'

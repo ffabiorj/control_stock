@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Lista de Estoque
+    <span class="pull-right">
+        <a href="">
+        <button type="button" class="btn btn-primary">
+            <span class="fa fa-plus"></span>
+            Adicionar
+      </button>
+  </a>
+  </span>
+</h2>
+{% if stocks %}
+<table class="table-table striped">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>NF</th>
+            <th>Data</th>
+            <th>Funcionário</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in stocks %}
+        <tr>
+            <td><a href="">{{ object }}</a></td>
+            <td>{{ stock.nf_formated }}</td>
+            <td>{{ stock.created }}</td>
+            <td>{{ stock.funcionario.first_name }}</td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert-alert warning text-center mt-4">
+    Sem item na lista.
+</div>
+{% endif %}
+{% endblock %}
