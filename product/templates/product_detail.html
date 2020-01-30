@@ -3,7 +3,7 @@
 <h3>
   {{ product }}
   <span class="pull-right"
-    ><a href=""
+    ><a href="{% url 'product:product_edit' product.pk %}"
       ><button class="btn btn-success">
         <span class="fa fa-pencil"></span>Editar</button></a
   ></span>
