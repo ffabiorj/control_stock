@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<a href="{% url 'stock:stock_entry_list' %}">Voltar</a>
+<h3>
+  {{ stock }}
+  <span class="pull-right"
+    ><a href="{% url 'stock:stock_entry_detail' stock.pk %}"
+      ><button class="btn btn-success">
+        <span class="fa fa-pencil"></span>Editar</button></a
+  ></span>
+</h3>
+<div class="col-sm-6 mt-4">
+    <table class="table table-user-information">
+        <tbody>
+        <tr>
+            <th class="text-right">Item</th>
+            <td>{{ stock }}</td>
+        </tr>
+        <tr>
+            <th class="text-right">NF</th>
+            <td>{{ stock.nf }}</td>
+        </tr>
+        <tr>
+            <th class="text-right">Funcionário</th>
+            <td>{{ stock.funcionario }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

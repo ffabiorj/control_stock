@@ -12,7 +12,7 @@
   </span>
 </h2>
 {% if stocks %}
-<table class="table-table striped">
+<table class="table table-striped mt-4">
     <thead>
         <tr>
             <th>Item</th>
@@ -24,8 +24,8 @@
     <tbody>
         {% for stock in stocks %}
         <tr>
-            <td><a href="">{{ object }}</a></td>
-            <td>{{ stock.nf_formated }}</td>
+            <td><a href="{% url 'stock:stock_entry_detail' stock.pk %}">{{ stock }}</a></td>
+            <td>{{ stock.nf_format }}</td>
             <td>{{ stock.created }}</td>
             <td>{{ stock.funcionario.first_name }}</td>
         </tr>
