@@ -24,7 +24,7 @@ class Stock(TimeStampedModel):
 
 
 class StockItems(models.Model):
-    estoque = models.ForeignKey(Stock, on_delete=models.CASCADE)
+    estoque = models.ForeignKey(Stock, on_delete=models.CASCADE, related_name='estoques')
     produto = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantidade = models.PositiveIntegerField()
     saldo = models.PositiveIntegerField()

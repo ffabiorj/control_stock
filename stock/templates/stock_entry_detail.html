@@ -26,4 +26,22 @@
         </tbody>
     </table>
 </div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Produto</th>
+      <th>Quantidade</th>
+      <th>Saldo</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stock in stock.estoques.all %}
+      <tr>
+        <td>{{ stock.produto }}</td>
+        <td>{{ stock.quantidade }}</td>
+        <td>{{ stock.saldo }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

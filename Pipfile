@@ -10,6 +10,7 @@ autopep8 = "*"
 django = "*"
 python-decouple = "*"
 django-widget-tweaks = "*"
+django-bootstrap-form = "*"
 
 [requires]
 python_version = "3.7"
